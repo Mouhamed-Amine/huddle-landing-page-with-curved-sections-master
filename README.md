@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop](./design/desktop-design.jpg)
-![Mobile](./design/mobile-design.jpg)
+![Desktop](./public/design/desktop-design.jpg)
+![Mobile](./public/design/mobile-design.jpg)
 
 
 ### Links
