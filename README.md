@@ -44,8 +44,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL here](https://www.frontendmentor.io/solutions/huddle-landing-page-with-curved-section-4pFnrl6bVV)
+- Live Site URL: [Add live site URL here](https://huddle-landing-page-gold-three.vercel.app/?__vercel_draft=1)
 
 ## My process
 
