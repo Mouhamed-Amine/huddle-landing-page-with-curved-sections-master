@@ -48,7 +48,7 @@ export default function Community() {
                 <div className="lg:w-1/2 text-center lg:text-right lg:ml-10">
                     <h3 className={`${style.family_headline} text-2xl md:text-3xl lg:text-4xl font-bold mb-4`}>Flowing Conversations</h3>
                     <p className={`${style.family_p} text-sm md:text-base lg:text-lg w-full lg:w-4/5`}>
-                    You wouldn't paginate a conversation in real life, so why do it online? Our threads have 
+                    You wouldn&apos;t paginate a conversation in real life, so why do it online? Our threads have 
                     just-in-time loading for a more natural flow.
                     </p>
                 </div>
@@ -60,7 +60,7 @@ export default function Community() {
                 <div className="lg:w-1/2 text-center lg:text-left">
                     <h3 className={`${style.family_headline} text-2xl md:text-3xl lg:text-4xl font-bold mb-4`}>Your Users</h3>
                     <p className={`${style.family_p} text-sm md:text-base lg:text-lg w-full lg:w-4/5`}>
-                    It takes no time at all to integrate Huddle with your app's authentication solution. This means, 
+                    It takes no time at all to integrate Huddle with your app&apos;s authentication solution. This means, 
                     once signed in to your app, your users can start chatting immediately.
                     </p>
                 </div>
