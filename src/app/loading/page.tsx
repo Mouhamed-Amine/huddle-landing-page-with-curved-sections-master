@@ -2,50 +2,53 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
+// Define props type fors the LoadingScreen component
 type LoadingScreenProps = {
-  onComplete: () => void;
+  onComplete: () => void; // Expecting a function with no parameters and void return
 };
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
-  const circleRef = useRef(null);
-  const contentRef = useRef(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    const tl = gsap.timeline({
+      onComplete: onComplete, // Call onComplete when the animation ends
+    });
+
     // Set initial states for circle and content
     gsap.set(circleRef.current, { scale: 0, autoAlpha: 0 });
     gsap.set(contentRef.current, { autoAlpha: 0 });
 
-    // Scale in the circle with content fade-in
-    gsap.to(circleRef.current, {
+    // Timeline for scaling in circle and content fade-in
+    tl.to(circleRef.current, {
       scale: 1,
       autoAlpha: 1,
       duration: 1.5,
       ease: "power2.out",
-      onComplete: () => {
-        // Reveal content after circle scales in
-        gsap.to(contentRef.current, { autoAlpha: 1, duration: 0.5 });
-      },
-    });
+    })
+      .to(contentRef.current, { autoAlpha: 1, duration: 0.5 }, "-=0.5")
+      .to(circleRef.current, {
+        rotation: 360,
+        duration: 1,
+        ease: "linear",
+        repeat: -1,
+      })
+      .to(circleRef.current, {
+        scale: 2.0,
+        autoAlpha: 0,
+        duration: 1,
+        delay: 5,
+        onComplete: () => {
+          tl.kill(); // Stop the timeline
+        },
+      });
 
-    // Continuous rotation for the circle
-    const rotateAnimation = gsap.to(circleRef.current, {
-      rotation: 360,
-      duration: 1,
-      ease: "linear",
-      repeat: -1,
-    });
-
-    // Scale out the circle after 5 seconds and hide content
-    gsap.to(circleRef.current, {
-      scale: 2.0,
-      autoAlpha: 0,
-      duration: 1,
-      delay: 5,
-      onComplete: () => {
-        rotateAnimation.kill(); // Stop the rotation
-        onComplete();           // Trigger the completion function
-      },
-    });
+    // Clean up animations on component unmount
+    return () => {
+      tl.kill();
+      gsap.killTweensOf([circleRef.current, contentRef.current]);
+    };
   }, [onComplete]);
 
   return (
