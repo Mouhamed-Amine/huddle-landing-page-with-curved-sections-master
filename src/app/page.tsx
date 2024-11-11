@@ -4,14 +4,26 @@ import Navbar from "./navbar/page";
 import Wall from "./community/page";
 import Footer from "./footer/page";
 
+
+import { useState } from 'react';
+import LoadingScreen from './loading/page';
+
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+
+
   return (
   <>
-   <Navbar/>;
-   <main>
-   <Wall />
-   <Footer />
-   </main>
+
+  {loading && <LoadingScreen onComplete={()=>setLoading(false)} />}
+  {!loading && (
+    <><Navbar /><main>
+          <Wall />
+          <Footer />
+        </main></>
+  )}
+  
   </>
   );
 }

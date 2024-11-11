@@ -25,9 +25,11 @@ export default function Community() {
                 </div>
             </section>
 
-            <section className="relative bg-slate-200 mb-10 flex flex-col lg:flex-row justify-center items-center mt-16 py-32 px-5 space-y-10 lg:space-y-0">
+
+            <section className="relative bg-lightBlue mb-10 flex flex-col lg:flex-row justify-center items-center mt-16 py-32 px-5 space-y-10 lg:space-y-0">
     {/* Wavy Top Background */}
-    <img src="/images/bg-section-top-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 bottom-0 h-25 w-full object-cover" />
+   
+    <img src="/images/bg-section-top-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 top-0 bg-white h-25 w-full object-cover" />
 
     {/* Content */}
     <div className="lg:w-1/2 text-center lg:text-left z-10 mt-10"> {/* Add margin to prevent overlap */}
@@ -37,7 +39,8 @@ export default function Community() {
             Think of the insightful conversations you miss out on with a feedback form.
         </p>
     </div>
-    <img src="/images/illustration-grow-together.svg" className="w-3/4 lg:w-1/4 z-10" alt="illustration-grow-together" />
+    <img src="/images/illustration-grow-together.svg" className="w-3/4 lg:w-1/4 z-10" alt="illustration-grow-together" /> 
+    <img src="/images/bg-section-bottom-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 bottom-0 bg-white h-25 w-full object-cover" />
 </section>
 
 
@@ -54,9 +57,8 @@ export default function Community() {
                 </div>
             </section>
 
-            <section className={`relative bg-slate-200 flex flex-col lg:flex-row justify-center items-center mt-16 py-32 px-5 space-y-10 lg:space-y-0 mb-16 md:mb-32`}>
-            <img src="/images/bg-section-bottom-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 top-0 h-25 w-full object-cover" />
-
+            <section className={`relative bg-lightBlue flex flex-col lg:flex-row justify-center items-center mt-16 py-32 px-5 space-y-10 lg:space-y-0 mb-16 md:mb-32`}>
+                <img src="/images/bg-section-top-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 top-0 bg-white h-15 w-full object-cover" />
                 <div className="lg:w-1/2 text-center lg:text-left">
                     <h3 className={`${style.family_headline} text-2xl md:text-3xl lg:text-4xl font-bold mb-4`}>Your Users</h3>
                     <p className={`${style.family_p} text-sm md:text-base lg:text-lg w-full lg:w-4/5`}>
@@ -64,9 +66,11 @@ export default function Community() {
                     once signed in to your app, your users can start chatting immediately.
                     </p>
                 </div>
-                <img src="/images/illustration-your-users.svg" className="w-3/4 lg:w-1/4" alt="illustration-grow-together" />
+                <img src="/images/illustration-your-users.svg" className="w-3/4 lg:w-1/4 z-10" alt="illustration-grow-together" />
 
-                <img src="/images/bg-section-top-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 bottom-0 h-15 w-full object-cover" />
+                
+                <img src="/images/bg-section-bottom-desktop-1.svg" alt="top-wave" className="absolute inset-x-0 bottom-0 bg-white h-15 w-full object-cover" />
+
             </section>
         </>
     );
